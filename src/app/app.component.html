@@ -45,6 +45,23 @@
                         </div>
                       </div>
                     </a>
+                    <ul *ngIf='!grandChild.isLeaf()'>
+                      <li *ngFor='let ggrandChild of grandChild.childArray'>
+                        <div *ngIf='ggrandChild != undefined'>
+                          <a href="#">
+                            <div style='display:inline-block' *ngFor='let itemss of ggrandChild.itemArray'>
+                              <div *ngIf='itemss != undefined'>
+                                <p>
+                                  <span>&nbsp;</span>
+                                  {{itemss.dData}}
+                                  <span>&nbsp;</span>
+                                </p>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </li>
               </ul>
@@ -52,10 +69,14 @@
           </li>
         </div>
       </ul>
+      <!-- END CHILDREN -->
 
     </li>
   </ul>
+  <!--END ROOT -->
+
 </div>
+<!-- END Tree -->
 <div class="group">
   <input type="number" [(ngModel)]="value" id='value' required="required" (keyup.enter)='insert(value)' />
   <label for="value">Enter Tree Data Here</label>
