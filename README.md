@@ -1,4 +1,4 @@
-# Angular2-BTree
+# Angular2 - BTree
 
 A 2-3-4Tree/BTree visualizer created in angular2. 
 
