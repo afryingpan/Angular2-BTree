@@ -1,27 +1,38 @@
-# BTree
+# Angular2 - BTree
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+A 2-3-4Tree/BTree visualizer created in angular2. 
 
-## Development server
+This was an old school Java project I converted into an angular2 web app. The tree starts off as a 234Tree, with the option to convert it into a BTree with an order of 5, 6, 7, or 8.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+I got the idea for this while tutoring students on this project. I wanted to refresh my memory while expanding my angular skills.
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To see the tree go [here](https://afryingpan.github.io/Angular2-BTree/)
 
-## Build
+## Built With
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+* [Angular2](angular.io)
+* HTML5
+* CSS3 
 
-## Running unit tests
+## Author
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[Christopher Gomez](https://github.com/afryingpan)
 
-## Running end-to-end tests
+## License
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Further help
+## Acknowledgments
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Thank you to the following people:
+
+* [Chris Ferguson](chris.ferguson@canyons.edu) - Professor who gave the original project and basis for the idea
+
+## TODO
+
+* Fix max display height - Right now the only displays up to the 3rd level (if you count the root as level 1)
+* Add BTree class - This class will inherit from the 2-3-4 Tree and only modify the split method.
+* UI - Add Buttons for tree operatons
+* Miscellaneous visual improvements, etc.
