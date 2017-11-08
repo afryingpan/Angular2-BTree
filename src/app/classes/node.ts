@@ -4,8 +4,8 @@ export class Node {
 	public static order = 4;
 	private numItems = 0;
 	private parent: Node;
-	private childArray: Node[];
-	private itemArray: DataItem[];
+	public childArray: Node[];
+	public itemArray: DataItem[];
 
 	// -------------------------------------------------------------
 

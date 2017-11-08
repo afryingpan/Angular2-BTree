@@ -57,8 +57,7 @@
   </ul>
 </div>
 <div class="group">
-  <input type="text" #value id='value' required="required" (keyup.enter)='insert(value.value)' />
+  <input type="number" [(ngModel)]="value" id='value' required="required" (keyup.enter)='insert(value)' />
   <label for="value">Enter Tree Data Here</label>
   <div class="bar"></div>
 </div>
-
