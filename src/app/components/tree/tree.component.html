@@ -1,91 +1,95 @@
 <div class='area'>
-<div class="tree" *ngIf='root.itemArray[0] != undefined'>
+  <div class="tree" *ngIf='root.itemArray[0] != undefined'>
 
-  <!--BEGIN ROOT-->
-  <ul>
-    <li>
-      <a href="#">
-        <div style='display:inline-block' *ngFor='let item of root.itemArray'>
-          <div *ngIf='item != undefined'>
-            <p>
-              <span>&nbsp;</span>
-              {{item.dData}}
-              <span>&nbsp;</span>
-            </p>
-          </div>
-        </div>
-      </a>
-
-      <!-- BEGIN CHILDREN -->
-      <ul *ngIf='!root.isLeaf()'>
-        <div>
-          <li *ngFor='let child of root.childArray'>
-            <div *ngIf='child != undefined'>
-              <a href="#">
-                <div style='display:inline-block' *ngFor='let item of child.itemArray'>
-                  <div *ngIf='item != undefined'>
-                    <p>
-                      <span>&nbsp;</span>
-                      {{item.dData}}
-                      <span>&nbsp;</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-              <ul *ngIf='!child.isLeaf()'>
-                <li *ngFor='let grandChild of child.childArray'>
-                  <div *ngIf='grandChild != undefined'>
-                    <a href="#">
-                      <div style='display:inline-block' *ngFor='let items of grandChild.itemArray'>
-                        <div *ngIf='items != undefined'>
-                          <p>
-                            <span>&nbsp;</span>
-                            {{items.dData}}
-                            <span>&nbsp;</span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                    <ul *ngIf='!grandChild.isLeaf()'>
-                      <li *ngFor='let ggrandChild of grandChild.childArray'>
-                        <div *ngIf='ggrandChild != undefined'>
-                          <a href="#">
-                            <div style='display:inline-block' *ngFor='let itemss of ggrandChild.itemArray'>
-                              <div *ngIf='itemss != undefined'>
-                                <p>
-                                  <span>&nbsp;</span>
-                                  {{itemss.dData}}
-                                  <span>&nbsp;</span>
-                                </p>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
+    <!--BEGIN ROOT-->
+    <ul>
+      <li>
+        <a href="#">
+          <div style='display:inline-block' *ngFor='let item of root.itemArray'>
+            <div *ngIf='item != undefined'>
+              <p>
+                <span>&nbsp;</span>
+                {{item.dData}}
+                <span>&nbsp;</span>
+              </p>
             </div>
-          </li>
-        </div>
-      </ul>
-      <!-- END CHILDREN -->
+          </div>
+        </a>
 
-    </li>
-  </ul>
-  <!--END ROOT -->
+        <!-- BEGIN CHILDREN -->
+        <ul *ngIf='!root.isLeaf()'>
+          <div>
+            <li *ngFor='let child of root.childArray'>
+              <div *ngIf='child != undefined'>
+                <a href="#">
+                  <div style='display:inline-block' *ngFor='let item of child.itemArray'>
+                    <div *ngIf='item != undefined'>
+                      <p>
+                        <span>&nbsp;</span>
+                        {{item.dData}}
+                        <span>&nbsp;</span>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <ul *ngIf='!child.isLeaf()'>
+                  <li *ngFor='let grandChild of child.childArray'>
+                    <div *ngIf='grandChild != undefined'>
+                      <a href="#">
+                        <div style='display:inline-block' *ngFor='let items of grandChild.itemArray'>
+                          <div *ngIf='items != undefined'>
+                            <p>
+                              <span>&nbsp;</span>
+                              {{items.dData}}
+                              <span>&nbsp;</span>
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                      <ul *ngIf='!grandChild.isLeaf()'>
+                        <li *ngFor='let ggrandChild of grandChild.childArray'>
+                          <div *ngIf='ggrandChild != undefined'>
+                            <a href="#">
+                              <div style='display:inline-block' *ngFor='let itemss of ggrandChild.itemArray'>
+                                <div *ngIf='itemss != undefined'>
+                                  <p>
+                                    <span>&nbsp;</span>
+                                    {{itemss.dData}}
+                                    <span>&nbsp;</span>
+                                  </p>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </div>
+        </ul>
+        <!-- END CHILDREN -->
 
-</div>
+      </li>
+    </ul>
+    <!--END ROOT -->
+
+  </div>
 </div>
 <!-- END Tree -->
 <div class='example-container'>
   <div class="group">
-    <mat-form-field [floatPlaceholder]='options.value.floatPlaceholder'>
-      <div class='row'>
+    <mat-form-field [floatPlaceholder]='options.value.floatPlaceholder' color='warn'>
       <input matInput type="number" placeholder='Tree Data' [(ngModel)]="value" (keyup.enter)='insert(value)' />
-      <button mat-raised-button>Enter</button>
-      </div>
     </mat-form-field>
+    <div class='row2'>
+      <button mat-raised-button color='warn'>Enter</button>
+      <button mat-raised-button matTooltip='Populate the Tree with random values' color='warn'>Populate</button>
+      <button mat-raised-button matTooltip='Clear the Tree' color='warn'>Clear</button>
+      <button mat-raised-button matTooltip='Change the Order of the Tree' color='warn'>Order</button>
+      <button mat-raised-button matTooltip='Try changing this if your tree gets too big' color='warn'>Font Size</button>
+      <p>Order: </p>
   </div>
 </div>
