@@ -1,7 +1,14 @@
 * {
   margin: 0;
-  padding: 0;
+  padding:0;
 }
+
+.area {
+  height:100%;
+  width:100%;
+  z-index: 0;
+}
+
 
 .tree ul {
   padding-top: 20px;
@@ -96,16 +103,17 @@ right connector from last child*/
 }
 
 .tree li a {
-  border: 1px solid #ccc;
+  border: 1px solid rgb(0, 0, 0);
   padding: 5px 10px;
   text-decoration: none;
-  color: #666;
-  font-family: arial, verdana, tahoma;
-  font-size: 15px;
+  color: rgb(0, 0, 0);
+font-family: 'Montserrat',
+sans-serif;
+  font-size: 2em;
   display: inline-block;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  border-radius: 10em;
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -137,17 +145,35 @@ right connector from last child*/
 .group {
 	display: flex;
 	flex-direction: column;
-	font-size:40px;
+  font-size:1.5em;
+  bottom:0;
+  font-family: 'Montserrat',
+  sans-serif;
 }
 
 .example-container{
-	width:90%;
+  padding:20px;
+  border-top: 1px solid black;
+  width:100%;
+  left:0px;
 	position: absolute;
-	bottom:10px;
+  bottom:0px;
+-webkit-box-shadow: 1px -6px 37px -10px rgba(0, 0, 0, 0.75);
+-moz-box-shadow: 1px -6px 37px -10px rgba(0, 0, 0, 0.75);
+box-shadow: 1px -6px 37px -10px rgba(0, 0, 0, 0.75);
+  z-index: 1;
+  font-family: 'Montserrat',
+  sans-serif;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .group>* {
-  width: 100%;
+  width: 50%;
 }
 
 ::selection {

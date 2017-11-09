@@ -1,3 +1,4 @@
+<div class='area'>
 <div class="tree" *ngIf='root.itemArray[0] != undefined'>
 
   <!--BEGIN ROOT-->
@@ -76,11 +77,15 @@
   <!--END ROOT -->
 
 </div>
+</div>
 <!-- END Tree -->
 <div class='example-container'>
   <div class="group">
     <mat-form-field [floatPlaceholder]='options.value.floatPlaceholder'>
+      <div class='row'>
       <input matInput type="number" placeholder='Tree Data' [(ngModel)]="value" (keyup.enter)='insert(value)' />
+      <button mat-raised-button>Enter</button>
+      </div>
     </mat-form-field>
   </div>
 </div>
