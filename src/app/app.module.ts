@@ -1,19 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
-import { D3Service } from 'd3-ng2-service'; // <-- import statement
-
+import { TreeComponent } from './components/tree/tree.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TreeService } from './services/tree.service';
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
-  providers: [D3Service],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		TreeComponent
+	],
+	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		MaterialModule,
+		FormsModule,
+		ReactiveFormsModule
+	],
+	providers: [TreeService],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
