@@ -37,3 +37,5 @@ Thank you to the following people:
 * Fix BTree split() - Right now the algorithm splits the node before the insert, should insert then split.
 * ~~UI - Add Buttons for tree operatons~~
 * Miscellaneous visual improvements, etc.
+* Possibly convert tree display from HTML to SVG? Very low priority right now.
+
