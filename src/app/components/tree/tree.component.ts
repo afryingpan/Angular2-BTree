@@ -3,6 +3,7 @@ import { Tree234 } from '../../classes/tree234';
 import { Node } from '../../classes/node';
 import { TreeService } from '../../services/tree.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Element } from '@angular/compiler';
 
 
 @Component({
@@ -12,23 +13,40 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class TreeComponent {
 	value: any;
-	root: Node;
 	theTree: Tree234;
-
+	order: number;
 	options: FormGroup;
 
 	constructor(private tree: TreeService, private fb: FormBuilder) {
-		this.theTree = tree.theTree;
-		this.theTree.logTree();
-		this.root = tree.root;
 		this.options = fb.group({
 			hideRequired: false,
 			floatPlaceholder: 'auto',
 		});
+		this.order = Node.order;
 	}
 
 	public insert(value: any) {
 		this.tree.insert(value);
-		this.root = this.tree.root;
+		this.value = null;
+	}
+
+	public clear(): void {
+		this.tree.clear();
+	}
+
+	public populate(): void {
+		this.tree.populate();
+	}
+
+	public orderUp(): void {
+		this.tree.changeOrder(++Node.order);
+		this.order = Node.order;
+		console.log(Node.order);
+	}
+
+	public orderDown(): void {
+		this.tree.changeOrder(--Node.order);
+		this.order = Node.order;
+		console.log(Node.order);
 	}
 }

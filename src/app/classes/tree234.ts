@@ -3,11 +3,13 @@ import { DataItem } from './data-item';
 
 export class Tree234 {
 	public root: Node;
-	public generations: number[];
+	public itemCount: number;
+	public allItems: DataItem[];
 
 	constructor() {
 		this.root = new Node();
-		this.generations = new Array<number>();
+		this.itemCount = 0;
+		this.allItems = new Array<any>();
 	}
 
 	public find(key: any): number {
@@ -42,6 +44,8 @@ export class Tree234 {
 		}  // end while
 
 		curNode.insertItem(tempItem);       // insert new DataItem
+		this.itemCount++;
+		this.allItems.push(tempItem.dData);
 	}
 
 	public split(thisNode: Node): void {
@@ -111,7 +115,6 @@ export class Tree234 {
 		for (let i = 0; i < numItems + 1; i++) {
 			const nextNode = thisNode.getChild(i);
 			if (nextNode !== undefined) {
-				this.generations.push(1);
 				this.recLogTree(nextNode, level + 1, i);
 			} else {
 				return;
