@@ -17,7 +17,7 @@ export class TreeComponent {
 	order: number;
 	options: FormGroup;
 
-	constructor(private tree: TreeService, private fb: FormBuilder) {
+	constructor(public tree: TreeService, private fb: FormBuilder) {
 		this.options = fb.group({
 			hideRequired: false,
 			floatPlaceholder: 'auto',
