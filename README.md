@@ -33,6 +33,7 @@ Thank you to the following people:
 ## TODO
 
 * ~~Fix max display height - Right now the only displays up to the 3rd level~~
-* Add BTree class - This class will inherit from the 2-3-4 Tree and only modify the split method.
-* UI - Add Buttons for tree operatons
+* ~~BTree class - This class will inherit from the 2-3-4 Tree and only modify the split method.~~
+* Fix BTree split() - Right now the algorithm splits the node before the insert, should insert then split.
+* ~~UI - Add Buttons for tree operatons~~
 * Miscellaneous visual improvements, etc.
